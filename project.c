@@ -162,15 +162,56 @@ void update_student(std arr[]){
 
 
 void short_attendance(std arr[]){
-
+    int flag =1,count=0;
+    for(int i=0;i<n;i++){
+        if(arr[i].attendance<75){// attendance in percent
+            printf("Roll Number: %ld\n", arr[i].roll_no);
+            printf("First Name: %s\n", arr[i].fname);
+            printf("Last Name: %s\n", arr[i].lname);
+            printf("CGPA: %f\n", arr[i].cgpa);
+            printf("\n");
+            for(int j=0;j<5;i++){
+                printf("CID: %d\n", arr[i].course_id[j]);
+            }
+            flag =0;
+            count++;
+        }
+    }
+    printf("Total number of students with short attendance: %d", count);
+    if(flag){
+            printf("Everybody is eligible for exams.\n");
+    }
 }
 
 void total_pass_fail(std arr[]){
-
+    int flag =1,count=0;
+    for(int i=0;i<n;i++){
+        if(arr[i].cgpa<4.0){// attendance in percent
+            printf("Roll Number: %ld\n", arr[i].roll_no);
+            printf("First Name: %s\n", arr[i].fname);
+            printf("Last Name: %s\n", arr[i].lname);
+            printf("CGPA: %f\n", arr[i].cgpa);
+            printf("\n");
+            for(int j=0;j<5;i++){
+                printf("CID: %d\n", arr[i].course_id[j]);
+            }
+            flag =0;
+            count++;
+        }
+    }
+    printf("Total number of students failed: %d", count);
+    if(flag){
+            printf("Everybody has passed.\n");
+    }
 }
 
 void avg_cgpa(std arr[]){
-
+    float avg_cg=0.0, sum=0.0;
+    for(int i=0;i<n;i++){
+        sum+= arr[i].cgpa; 
+    }
+    avg_cg = (float)sum/n;
+    printf("The average CGPA of the class is %f", avg_cg);
 }
 
 void finalize_file(std arr[]){
@@ -178,7 +219,22 @@ void finalize_file(std arr[]){
 }
 
 void toppers_list(std arr[]){
-
+    std arr2[num];
+    for(int i=0;i<n;i++){
+        arr2[i]=arr[i];
+    }
+    for(int i=0;i<n;i++){
+        for(int j=i;j<n;j++){
+            if(arr2[j].cgpa<arr2[j+1].cgpa){
+                float temp = arr2[j].cgpa;
+                arr2[j].cgpa=arr2[j+1].cgpa;
+                arr2[j+1].cgpa=temp;
+            }
+        }
+    }
+    for(int i=0;i<n;i++){
+        printf("Rank: %d is %s %s with CGPA %f\n",i+1,arr2[i].fname,arr2[i].lname,arr2[i].cgpa);
+    }
 }
 
 int main(){
