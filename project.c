@@ -109,7 +109,7 @@ void find_by_fname(std arr[]){
             printf("Last Name: %s\n", arr[i].lname);
             printf("CGPA: %f\n", arr[i].cgpa);
             printf("\n");
-            for(int j=0;j<5;i++){
+            for(int j=0;j<5;j++){
                 printf("CID: %d\n", arr[i].course_id[j]);
             }
             break;
@@ -194,7 +194,7 @@ void total_pass_fail(std arr[]){
             printf("Last Name: %s\n", arr[i].lname);
             printf("CGPA: %f\n", arr[i].cgpa);
             printf("\n");
-            for(int j=0;j<5;i++){
+            for(int j=0;j<5;j++){
                 printf("CID: %d\n", arr[i].course_id[j]);
             }
             flag =0;
