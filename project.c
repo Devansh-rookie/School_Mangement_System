@@ -259,8 +259,68 @@ int main(){
     printf("What do you want the MAX length of array to be?\n");
     scanf("%d",&num);
     std arr[num];
-
-    printf();
-
+    int ch;
+    printf("Main Menu: Choose the number\n");
+    printf("1. Add Student\n2. Total Students\n3. Delete Student(First Name)\n4. Delete Student(Roll Number)\n5. Find Student(by First Name)\n6. Find Student(by Roll Number)\n7. Update Student\n 8. Short Attendance Student\n9. Total Students Failed in the Examination\n10. Average CGPA\n11. Topper List\n 12. Dump Database in File\n 13. Exit\nChoice: ");
+    scanf("%d",&ch);
+    b:
+    switch (ch)
+    {
+    case 1:
+        add_student(arr);
+        goto b;
+        break;
+    case 2:
+        total_number_of_students(arr);
+        goto b;
+        break;
+    case 3:
+        delete_student_fname(arr);
+        goto b;
+        break;
+    case 4:
+        delete_student_roll(arr);
+        goto b;
+        break;
+    case 5:
+        find_by_fname(arr);
+        goto b;
+        break;
+    case 6:
+        find_by_rollnumber(arr);
+        goto b;
+        break;
+    case 7:
+        update_student(arr);
+        goto b;
+        break;
+    case 8:
+        short_attendance(arr);
+        goto b;
+        break;
+    case 9:
+        total_pass_fail(arr);
+        goto b;
+        break;
+    case 10:
+        avg_cgpa(arr);
+        goto b;
+        break;
+    case 11:
+        toppers_list(arr);
+        goto b;
+        break;
+    case 12:
+        finalize_file(arr);
+        goto b;
+        break;
+    case 13:
+        exit(0);
+        goto b;
+        break;
+    default:
+        goto b;
+        break;
+    }
     return 0;
 }
