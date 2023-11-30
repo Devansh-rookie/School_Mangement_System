@@ -20,7 +20,7 @@ void add_student(std arr[]){
     printf("Last Name of Student: ");
     fgets(arr[n].lname,100,stdin);
     printf("Roll Number of Student: ");
-    scanf("%ld",&arr[n].roll_no);
+    scanf("%lld",&arr[n].roll_no);
     printf("CGPA of Student: ");
     scanf("%f",&arr[n].cgpa);
     // int c;
@@ -82,7 +82,7 @@ void find_by_rollnumber(std arr[]){
 
     for(int i=0;i<n;i++){
         if(arr[i].roll_no==roll){
-            printf("Roll Number: %ld\n", arr[i].roll_no);
+            printf("Roll Number: %lld\n", arr[i].roll_no);
             printf("First Name: %s\n", arr[i].fname);
             printf("Last Name: %s\n", arr[i].lname);
             printf("CGPA: %f\n", arr[i].cgpa);
@@ -98,11 +98,11 @@ void find_by_rollnumber(std arr[]){
 void find_by_fname(std arr[]){
     char fname;
     printf("What is the First Name: ");
-    scanf("%d",&fname);
+    scanf("%s",&fname);
 
     for(int i=0;i<n;i++){
-        if(!strcmp(arr[i].fname,fname)){
-            printf("Roll Number: %ld\n", arr[i].roll_no);
+        if(!strcmp(arr[i].fname,&fname)){
+            printf("Roll Number: %lld\n", arr[i].roll_no);
             printf("First Name: %s\n", arr[i].fname);
             printf("Last Name: %s\n", arr[i].lname);
             printf("CGPA: %f\n", arr[i].cgpa);
@@ -139,7 +139,7 @@ void update_student(std arr[]){
             break;
         case 3:
             printf("Updated Roll Number: ");
-            scanf("%ld",&arr[x].roll_no);
+            scanf("%lld",&arr[x].roll_no);
             break;
         case 4:
             printf("Updated CGPA: ");
@@ -165,7 +165,7 @@ void short_attendance(std arr[]){
     int flag =1,count=0;
     for(int i=0;i<n;i++){
         if(arr[i].attendance<75){// attendance in percent
-            printf("Roll Number: %ld\n", arr[i].roll_no);
+            printf("Roll Number: %lld\n", arr[i].roll_no);
             printf("First Name: %s\n", arr[i].fname);
             printf("Last Name: %s\n", arr[i].lname);
             printf("CGPA: %f\n", arr[i].cgpa);
@@ -187,7 +187,7 @@ void total_pass_fail(std arr[]){
     int flag =1,count=0;
     for(int i=0;i<n;i++){
         if(arr[i].cgpa<4.0){// attendance in percent
-            printf("Roll Number: %ld\n", arr[i].roll_no);
+            printf("Roll Number: %lld\n", arr[i].roll_no);
             printf("First Name: %s\n", arr[i].fname);
             printf("Last Name: %s\n", arr[i].lname);
             printf("CGPA: %f\n", arr[i].cgpa);
@@ -219,7 +219,7 @@ void finalize_file(std arr[]){
     fp= fopen("student_database.txt","w");
     // can also take from user
     for(int i=0;i<n;i++){
-        fprintf(fp,"Roll Number: %ld\n", arr[i].roll_no);
+        fprintf(fp,"Roll Number: %lld\n", arr[i].roll_no);
         fprintf(fp,"First Name: %s\n", arr[i].fname);
         fprintf(fp,"Last Name: %s\n", arr[i].lname);
         fprintf(fp,"CGPA: %f\n", arr[i].cgpa); 
