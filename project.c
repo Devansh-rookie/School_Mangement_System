@@ -133,11 +133,11 @@ void update_student(std arr[]){
     switch(ch){
         case 1:
             printf("Updated First Name: ");
-            fgets(arr[x].fname,100,stdin);
+            scanf(" %[^\n]s",arr[x].fname);
             break;
         case 2:
             printf("Updated Last Name: ");
-            fgets(arr[x].lname,100,stdin);
+            scanf(" %[^\n]s",arr[x].lname);
             break;
         case 3:
             printf("Updated Roll Number: ");
@@ -150,7 +150,7 @@ void update_student(std arr[]){
         case 5:
             printf("Enter New courses: ");
             for(int i=0;i<5;i++){// 5 Courses is the max taken by a student
-                scanf("%d",&arr[n].course_id[i]);
+                scanf("%d",&arr[x].course_id[i]);
             }
             break;
         case 6:
@@ -172,7 +172,7 @@ void short_attendance(std arr[]){
             printf("Last Name: %s\n", arr[i].lname);
             printf("CGPA: %f\n", arr[i].cgpa);
             printf("\n");
-            for(int j=0;j<5;i++){
+            for(int j=0;j<5;j++){
                 printf("CID: %d\n", arr[i].course_id[j]);
             }
             flag =0;
@@ -213,7 +213,7 @@ void avg_cgpa(std arr[]){
         sum+= arr[i].cgpa; 
     }
     avg_cg = (float)sum/n;
-    printf("The average CGPA of the class is %f", avg_cg);
+    printf("The average CGPA of the class is %f\n", avg_cg);
 }
 
 void finalize_file(std arr[]){
