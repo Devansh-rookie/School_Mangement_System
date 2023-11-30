@@ -225,6 +225,7 @@ void finalize_file(std arr[]){
         fprintf(fp,"First Name: %s\n", arr[i].fname);
         fprintf(fp,"Last Name: %s\n", arr[i].lname);
         fprintf(fp,"CGPA: %f\n", arr[i].cgpa); 
+        fprintf(fp,"Attendance: %f\n",arr[i].attendance);
         fprintf(fp,"\n");
         for(int j=0;j<5;j++){
                 fprintf(fp,"CID: %d\n", arr[i].course_id[j]);
