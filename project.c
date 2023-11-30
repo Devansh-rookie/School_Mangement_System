@@ -11,20 +11,22 @@ typedef struct student{
     long long int roll_no;
     float cgpa;
     float attendance;
-    int course_id[25];
+    int course_id[5];
 } std;
 
 void add_student(std arr[]){
     printf("First Name of Student: ");
-    fgets(arr[n].fname,100,stdin);
+    scanf(" %[^\n]s",arr[n].fname);// %[^\n]%*c
     printf("Last Name of Student: ");
-    fgets(arr[n].lname,100,stdin);
+    // fgets(arr[n].lname,100,stdin);
+    scanf(" %[^\n]s",arr[n].lname);
     printf("Roll Number of Student: ");
     scanf("%lld",&arr[n].roll_no);
     printf("CGPA of Student: ");
     scanf("%f",&arr[n].cgpa);
     // int c;
     // scanf("Number of Courses taken by student",&c);
+    printf("Courses: ");
     for(int i=0;i<5;i++){// 5 Courses is the max taken by a student
         scanf("%d",&arr[n].course_id[i]);
     }
@@ -51,7 +53,7 @@ void delete_student_roll(std arr[]){
             if(key==arr[i].roll_no) break;
         }
         for(int j=i;j<n;j++){
-            arr[i]=arr[i+1];
+            arr[j]=arr[j+1];
         }
         n--;
     }
@@ -63,13 +65,13 @@ void delete_student_fname(std arr[]){
     else{
         char key[100];
         printf("Which First Name to delete?\n");
-        fgets(key,100,stdin);
+        scanf(" %[^\n]s",key);
         int i;
         for(i=0;i<n;i++){
             if(!strcmp(key, arr[i].fname)) break;
         }
         for(int j=i;j<n;j++){
-            arr[i]=arr[i+1];
+            arr[j]=arr[j+1];
         }
         n--;
     }
@@ -87,7 +89,7 @@ void find_by_rollnumber(std arr[]){
             printf("Last Name: %s\n", arr[i].lname);
             printf("CGPA: %f\n", arr[i].cgpa);
             printf("\n");
-            for(int j=0;j<5;i++){
+            for(int j=0;j<5;j++){
                 printf("CID: %d\n", arr[i].course_id[j]);
             }
             break;
@@ -260,10 +262,10 @@ int main(){
     scanf("%d",&num);
     std arr[num];
     int ch;
-    printf("Main Menu: Choose the number\n");
-    printf("1. Add Student\n2. Total Students\n3. Delete Student(First Name)\n4. Delete Student(Roll Number)\n5. Find Student(by First Name)\n6. Find Student(by Roll Number)\n7. Update Student\n 8. Short Attendance Student\n9. Total Students Failed in the Examination\n10. Average CGPA\n11. Topper List\n 12. Dump Database in File\n 13. Exit\nChoice: ");
-    scanf("%d",&ch);
     b:
+    printf("Main Menu: Choose the number\n");
+    printf("1. Add Student\n2. Total Students\n3. Delete Student(First Name)\n4. Delete Student(Roll Number)\n5. Find Student(by First Name)\n6. Find Student(by Roll Number)\n7. Update Student\n8. Short Attendance Student\n9. Total Students Failed in the Examination\n10. Average CGPA\n11. Topper List\n12. Dump Database in File\n13. Exit\nChoice: ");
+    scanf("%d",&ch);
     switch (ch)
     {
     case 1:
