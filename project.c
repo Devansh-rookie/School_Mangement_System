@@ -10,6 +10,7 @@ typedef struct student{
     char lname[20];
     long long int roll_no;
     float cgpa;
+    float attendance;
     int course_id[25];
 } std;
 
@@ -27,6 +28,9 @@ void add_student(std arr[]){
     for(int i=0;i<5;i++){// 5 Courses is the max taken by a student
         scanf("%d",&arr[n].course_id[i]);
     }
+    printf("Attendance: ");
+    scanf("%f",&arr[n].attendance);
+
     n++;
 }
 
@@ -91,7 +95,7 @@ void find_by_rollnumber(std arr[]){
     }
 }
 
-void find_by_rollnumber(std arr[]){
+void find_by_fname(std arr[]){
     char fname;
     printf("What is the First Name: ");
     scanf("%d",&fname);
@@ -111,8 +115,69 @@ void find_by_rollnumber(std arr[]){
     }
 }
 
+void update_student(std arr[]){
+    int roll;
+    printf("What is the roll number: ");
+    scanf("%d",&roll);
+    int i;
+    for(i=0;i<n;i++){
+        if(arr[i].roll_no==roll) break;
+    }
+    int x=i;
+    a:
+    printf("Choose the number:\n1. First Name\n2. Last Name\n3. Roll No.\n4. CGPA\n5. Courses\n6. Exit\n");
+    int ch;
+    scanf("%d",&ch);
+    switch(ch){
+        case 1:
+            printf("Updated First Name: ");
+            fgets(arr[x].fname,100,stdin);
+            break;
+        case 2:
+            printf("Updated Last Name: ");
+            fgets(arr[x].lname,100,stdin);
+            break;
+        case 3:
+            printf("Updated Roll Number: ");
+            scanf("%ld",&arr[x].roll_no);
+            break;
+        case 4:
+            printf("Updated CGPA: ");
+            scanf("%f",&arr[x].cgpa);
+            break;
+        case 5:
+            printf("Enter New courses: ");
+            for(int i=0;i<5;i++){// 5 Courses is the max taken by a student
+                scanf("%d",&arr[n].course_id[i]);
+            }
+            break;
+        case 6:
+            exit(0);
+            break;
+        default:
+            printf("Enter a valid value.");
+            goto a;
+    }
+}
+
+
+void short_attendance(std arr[]){
+
+}
+
+void total_pass_fail(std arr[]){
+
+}
+
+void avg_cgpa(std arr[]){
+
+}
 
 void finalize_file(std arr[]){
+
+}
+
+void toppers_list(std arr[]){
 
 }
 
