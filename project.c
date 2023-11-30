@@ -215,8 +215,25 @@ void avg_cgpa(std arr[]){
 }
 
 void finalize_file(std arr[]){
-
+    FILE *fp;
+    fp= fopen("student_database.txt","w");
+    // can also take from user
+    for(int i=0;i<n;i++){
+        fprintf(fp,"Roll Number: %ld\n", arr[i].roll_no);
+        fprintf(fp,"First Name: %s\n", arr[i].fname);
+        fprintf(fp,"Last Name: %s\n", arr[i].lname);
+        fprintf(fp,"CGPA: %f\n", arr[i].cgpa); 
+        fprintf(fp,"\n");
+        for(int j=0;j<5;i++){
+                fprintf(fp,"CID: %d\n", arr[i].course_id[j]);
+        }
+    }
+    fclose(fp);
 }
+
+// void read_existing(std arr[]){
+
+// }
 
 void toppers_list(std arr[]){
     std arr2[num];
@@ -243,4 +260,7 @@ int main(){
     scanf("%d",&num);
     std arr[num];
 
+    printf();
+
+    return 0;
 }
