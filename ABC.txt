@@ -1,0 +1,24 @@
+Roll Number: 123110034
+First Name: Devansh
+Last Name: D
+CGPA: 9.000000
+Attendance: 95.000000
+CID: 1
+CID: 2
+CID: 3
+CID: 4
+CID: 5
+
+
+Roll Number: 123110024
+First Name: Sanskar
+Last Name: Aggarwal
+CGPA: 9.000000
+Attendance: 50.000000
+CID: 1
+CID: 2
+CID: 3
+CID: 4
+CID: 5
+
+
