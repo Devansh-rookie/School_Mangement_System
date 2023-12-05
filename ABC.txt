@@ -1,6 +1,6 @@
-Roll Number: 123110034
-First Name: Devansh
-Last Name: D
+Roll Number: 123105065
+First Name: Tanuj
+Last Name: Sheoran
 CGPA: 9.000000
 Attendance: 95.000000
 CID: 1
@@ -10,11 +10,11 @@ CID: 4
 CID: 5
 
 
-Roll Number: 123110024
-First Name: Sanskar
-Last Name: Aggarwal
+Roll Number: 123105108
+First Name: Ujjwal
+Last Name: Jangid
 CGPA: 9.000000
-Attendance: 50.000000
+Attendance: 75.000000
 CID: 1
 CID: 2
 CID: 3
